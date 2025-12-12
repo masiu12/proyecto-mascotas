@@ -1,0 +1,238 @@
+:root {
+    --accent: #7a5cff;
+    --bg: #1f2430;
+    
+    --card: #22262d;
+    --muted: #9aa3b2;
+    --glass: rgba(255, 255, 255, 0.03);
+    --success: #3ddc84;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Inter, system-ui, Arial;
+    background: linear-gradient(180deg, var(--bg), #121316);
+    color: #e6eef8
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    background: linear-gradient(90deg, #14171b88, rgba(255, 255, 255, 0.03));
+    backdrop-filter: blur(6px)
+}
+
+header h1 {
+    font-size: 18px;
+    margin: 0
+}
+
+nav {
+    display: flex;
+    gap: 8px
+}
+
+nav button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: #e6eef8;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+nav button.active {
+    background: var(--accent);
+    box-shadow: 0 6px 18px rgba(122, 92, 255, 0.12)
+}
+
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 16px
+}
+
+.card {
+    background: linear-gradient(180deg, var(--card), #16181c);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+    margin-bottom: 16px
+}
+
+.login-wrap {
+    max-width: 420px;
+    margin: 40px auto
+}
+
+form {
+    display: grid;
+    gap: 10px
+}
+
+label {
+    font-size: 13px;
+    color: var(--muted)
+}
+
+input,
+select,
+button {
+    font-size: 14px
+}
+
+input,
+select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: transparent;
+    color: #65686b
+}
+
+button.primary {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer
+}
+
+button.secondary {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: #e6eef8;
+    padding: 8px 10px;
+    border-radius: 8px
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px
+}
+
+@media(max-width:900px) {
+    .row {
+        grid-template-columns: 1fr
+    }
+}
+
+ul.simple {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+ul.simple li {
+    padding: 8px 10px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.02);
+    color: #d9e6f3
+}
+
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px
+}
+
+.product {
+    padding: 12px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+.product h4 {
+    margin: 6px 0
+}
+
+.product p {
+    font-size: 13px;
+    color: var(--muted)
+}
+
+.cart-items {
+    max-height: 300px;
+    overflow: auto
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 13px
+}
+
+footer {
+    padding: 12px;
+    text-align: center;
+    color: var(--muted)
+}
+
+.hidden {
+    display: none
+}
+
+.narrow {
+    max-width: 520px
+}
+
+.list-card {
+    margin-top: 10px;
+    padding: 10px
+}
+
+/* gallery styles */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px
+}
+
+.galeria img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04)
+}
+
+/* small helpers */
+.input-error {
+    outline: 2px solid rgba(255, 80, 80, 0.18)
+}
+
+.success-badge {
+    display: inline-block;
+    background: var(--success);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 13px
+}
+
+/* responsive tweaks */
+@media(max-width:520px) {
+    header h1 {
+        font-size: 16px;
+        padding-right: 8px
+    }
+
+    .container {
+        padding: 8px
+    }
+}

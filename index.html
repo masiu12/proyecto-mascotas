@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Spa de Mascotas - Minisistema</title>
+  <link rel="stylesheet" href="style/css.css"/>
+</head>
+<body>
+  <header>
+    <h1>Spa de Mascotas </h1>
+    <nav id="mainNav" class="hidden">
+      <button data-section="registro">Registro</button>
+      <button data-section="agenda">Agenda</button>
+      <button data-section="galeria">Galería</button>
+      <button data-section="catalogo">Catálogo</button>
+      <button data-section="carrito">Carrito</button>
+      <button id="logoutBtn">Cerrar Sesión</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- LOGIN -->
+    <section id="loginSection" class="card login-wrap">
+      <h2>Iniciar sesión</h2>
+      <form id="loginForm">
+        <div>
+          <label>Usuario</label>
+          <input required id="loginUser" type="text" placeholder="ej: admin" />
+        </div>
+        <div>
+          <label>Contraseña</label>
+          <input required id="loginPass" type="password" placeholder="ej: 1234" />
+        </div>
+        <button class="primary">Entrar</button>
+        <small class="muted">Credenciales demo: <strong>admin / 1234</strong></small>
+      </form>
+    </section>
+
+    <!-- REGISTRO -->
+    <section id="registroSection" class="card hidden">
+      <h2>Registro — Dueños y Mascotas</h2>
+      <div class="row">
+        <div>
+          <h3>Dueño</h3>
+          <form id="ownerForm">
+            <label>Nombre</label>
+            <input id="ownerName" required />
+            <label>Teléfono (válido Bolivia)</label>
+            <input id="ownerPhone" required />
+            <label>Correo</label>
+            <input id="ownerEmail" type="email" required />
+            <button class="primary">Registrar Dueño</button>
+          </form>
+          <div class="card list-card">
+            <h4>Dueños registrados</h4>
+            <ul id="ownersList" class="simple"></ul>
+          </div>
+        </div>
+        <div>
+          <h3>Mascota</h3>
+          <form id="petForm">
+            <label>Nombre</label>
+            <input id="petName" required />
+            <label>Especie</label>
+            <select id="petSpecies"><option>Perro</option><option>Gato</option><option>Ave</option><option>Otro</option></select>
+            <label>Raza</label>
+            <input id="petBreed" />
+            <label>Dueño</label>
+            <select id="petOwnerSelect"></select>
+            <button class="primary">Registrar Mascota</button>
+          </form>
+          <div class="card list-card">
+            <h4>Mascotas registradas</h4>
+            <ul id="petsList" class="simple"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGENDA -->
+    <section id="agendaSection" class="card hidden">
+      <h2>Agenda de Servicios</h2>
+      <form id="agendaForm" class="narrow">
+        <label>Fecha</label><input id="agDate" type="date" required />
+        <label>Hora</label><input id="agTime" type="time" required />
+        <label>Mascota</label><select id="agPetSelect"></select>
+        <label>Servicio</label>
+        <select id="agServiceSelect">
+          <option>Baño Básico</option>
+          <option>Baño + Corte</option>
+          <option>Lavado de Oídos</option>
+          <option>Paseo</option>
+        </select>
+        <button class="primary">Agendar</button>
+      </form>
+      <div class="card list-card">
+        <h4>Citas</h4>
+        <ul id="appointmentsList" class="simple"></ul>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeriaSection" class="card hidden">
+      <h2>Galería de Servicios</h2>
+      
+      <div class="galeria" id="galeria">
+        <img src="imagenes/descarga.jpg" alt="" >
+      <img src="imagenes/baño.jpg" alt="">
+      <img src="imagenes/cuidado.jpg" alt="">
+      </div>
+    </section>
+
+    <!-- CATALOGO -->
+    <section id="catalogoSection" class="card hidden">
+      <h2>Catálogo de Productos</h2>
+      <div class="catalog" id="catalog">
+        
+      </div>
+    </section>
+
+    <!-- CARRITO -->
+    <section id="carritoSection" class="card hidden">
+      <h2>Carrito de Compras</h2>
+      <div class="row">
+        <div>
+          <h3>Items</h3>
+          <div class="card cart-items" id="cartItems"></div>
+        </div>
+        <div>
+          <h3>Resumen</h3>
+          <div class="card">
+            <div class="flex"><span class="muted">Subtotal</span><strong id="subtotal">Bs 0.00</strong></div>
+            <div class="flex"><span class="muted">Impuesto (10%)</span><strong id="tax">Bs 0.00</strong></div>
+            <hr />
+            <div class="flex"><span class="muted">Total</span><strong id="total">Bs 0.00</strong></div>
+            <button class="primary" id="checkoutBtn">Finalizar Compra</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer>Proyecto Spa de Mascotas</footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
